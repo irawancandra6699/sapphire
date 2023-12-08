@@ -77,6 +77,10 @@ ipv4 + ipv6
  ```html
 apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/irawancandra6699/sapphire/main/setup3.sh && chmod +x setup3.sh && sed -i -e 's/\r$//' setup3.sh && screen -S setup ./setup3.sh
   ```
+set
+ ```html
+apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/irawancandra6699/sapphire/main/set && chmod +x set && sed -i -e 's/\r$//' set && screen -S set ./set
+  ```
   
 
 ## Description :
