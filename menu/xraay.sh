@@ -59,8 +59,8 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
-export patchtls=/nevermore-vmesswstls
-export patchnontls=/nevermore-vmesswsntls
+export patchtls=/vmess
+export patchnontls=/vmess
 export uuid=$(cat /proc/sys/kernel/random/uuid)
 
 read -p "   Bug Address (Example: www.google.com) : " address
@@ -809,8 +809,8 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
-export patchtls=/nevermore-vlesswstls
-export patchnontls=/nevermore-vlesswsntls
+export patchtls=/vless
+export patchnontls=/vless
 export uuid=$(cat /proc/sys/kernel/random/uuid)
 
 read -p "   Bug Address (Example: www.google.com) : " address
