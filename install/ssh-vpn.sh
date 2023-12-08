@@ -313,6 +313,7 @@ wget -O dns "https://raw.githubusercontent.com/${GitUser}/sapphire/main/system/d
 wget -O netf "https://raw.githubusercontent.com/${GitUser}/sapphire/main/system/netf.sh"
 wget -O ins-helium "https://raw.githubusercontent.com/${GitUser}/sapphire/main/system/ins-helium.sh"
 wget -O add-ip "https://raw.githubusercontent.com/${GitUser}/sapphire/main/system/add-ip"
+wget -O certv2ray "https://raw.githubusercontent.com/${GitUser}/sapphire/main/certv2ray"
 chmod +x add-host
 chmod +x menu
 chmod +x add-ssh
@@ -366,6 +367,7 @@ chmod +x nf
 chmod +x netf
 chmod +x ins-helium
 chmod +x add-ip
+chmod +x certv2ray
 echo "0 1 * * * root delete && xp" >> /etc/crontab
 echo "*/2 * * * * root clear-log" >> /etc/crontab
 echo "0 5 * * * root reboot" >> /etc/crontab
