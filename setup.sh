@@ -14,6 +14,12 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0;37m'
+TIME=$(date '+%d %b %Y')
+ipsaya=$(wget -qO- ipinfo.io/ip)
+TIMES="10"
+CHATID="5879214876"
+KEY="6452283289:AAF8LR2iWqoA-dW6s8YfapsgkTSq7aRVGck"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
 # ===================
 echo ''
 clear
@@ -130,6 +136,24 @@ echo "IP=" >> /var/lib/premium-script/ipvps.conf
 echo $host1 > /root/domain
 echo ""
 elif [[ $host == "2" ]]; then
+ USRSC=$(wget -qO- https://raw.githubusercontent.com/irawancandra6699/allow/main/ipvps.conf | grep $ipsaya | awk '{print $2}')
+    EXPSC=$(wget -qO- https://raw.githubusercontent.com/irawancandra6699/allow/main/ipvps.conf | grep $ipsaya | awk '{print $3}')
+    TIMEZONE=$(printf '%(%H:%M:%S)T')
+    TEXT="
+<code>────────────────────</code>
+<b>⚡AUTOSCRIPT PREMIUM⚡</b>
+<code>────────────────────</code>
+<code>ID     : </code><code>$USRSC</code>
+<code>Domain : </code><code>$domain</code>
+<code>Date   : </code><code>$TIME</code>
+<code>Time   : </code><code>$TIMEZONE</code>
+<code>Ip vps : </code><code>$ipsaya</code>
+<code>Exp Sc : </code><code>$EXPSC</code>
+<code>────────────────────</code>
+<i>Automatic Notification from Github</i>
+"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ🐳","url":"https://t.me/Candravpnz"},{"text":"ɪɴꜱᴛᴀʟʟ🐬","url":"https://t.me/hafiraku"}]]}'
+    curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+}
 #install cf
 wget https://raw.githubusercontent.com/${GitUser}/sapphire/main/install/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
