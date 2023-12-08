@@ -89,16 +89,11 @@ echo $sts > /usr/local/etc/xray/email
 echo ""
 #install cf
 wget https://raw.githubusercontent.com/${GitUser}/sapphire/main/install/cf.sh && chmod +x cf.sh && ./cf.sh
-rm -f /root/cf.sh
-clear
 else
 echo -e "Random Subdomain/Domain is used"
 wget https://raw.githubusercontent.com/${GitUser}/sapphire/main/install/cf.sh && chmod +x cf.sh && ./cf.sh
-rm -f /root/cf.sh
-clear
 fi
 echo ""
-clear
 echo -e "\e[0;32mREADY FOR INSTALLATION SCRIPT...\e[0m"
 sleep 2
 #install ssh ovpn
