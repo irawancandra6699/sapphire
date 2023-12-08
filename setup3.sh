@@ -87,6 +87,23 @@ mkdir -p /usr/local/etc/xray/
 touch /usr/local/etc/xray/email
 echo $sts > /usr/local/etc/xray/email
 echo ""
+echo -e "\e[1;32m════════════════════════════════════════════════════════════\e[0m"
+echo ""
+echo -e "   .----------------------------------."
+echo -e "   |\e[1;32mPlease select a domain type below \e[0m|"
+echo -e "   '----------------------------------'"
+echo -e "     \e[1;32m1)\e[0m Enter your Subdomain"
+echo -e "     \e[1;32m2)\e[0m Use a random Subdomain"
+echo -e "   ------------------------------------"
+read -p "   Please select numbers 1-2 or Any Button(Random) : " host
+echo ""
+if [[ $host == "1" ]]; then
+echo -e "   \e[1;32mPlease enter your subdomain "
+read -p "   Subdomain: " host1
+echo "IP=" >> /var/lib/premium-script/ipvps.conf
+echo $host1 > /root/domain
+echo ""
+elif [[ $host == "2" ]]; then
 #install cf
 wget https://raw.githubusercontent.com/${GitUser}/sapphire/main/install/cf.sh && chmod +x cf.sh && ./cf.sh
 else
